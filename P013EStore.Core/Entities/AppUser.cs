@@ -14,6 +14,7 @@ namespace P013EStore.Core.Entities
 		public string Name { get; set; }
 		[Display(Name = "Soyad")]
 		public string? Surname { get; set; }
+		[EmailAddress]
 		public string Email { get; set; }
 		[Display(Name = "Şifre")]
 		public string Password { get; set; }

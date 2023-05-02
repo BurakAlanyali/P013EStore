@@ -31,5 +31,9 @@ namespace P013EStore.Core.Entities
         public int CategoryId { get; set; }
 		[Display(Name = "Kategori")]
 		public Category? Category { get; set; }
+        [Display(Name = "Marka")]
+        public int BrandId { get; set; }
+        [Display(Name = "Marka")]
+        public Brand? Brand { get; set; }
     }
 }
