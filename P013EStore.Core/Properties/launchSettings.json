@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "P013EStore.Core": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60834;http://localhost:60835"
+    }
+  }
+}
