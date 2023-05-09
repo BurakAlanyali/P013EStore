@@ -81,6 +81,7 @@ namespace P013EStore.MVCUI.Areas.Admin.Controllers
             {
                 if (resmiSil is not null && resmiSil ==true)
                 {
+                    FileHelper.FileRemover(collection.Logo);
                     collection.Logo = "";
                 }
                 if (Logo is not null)
@@ -98,18 +99,30 @@ namespace P013EStore.MVCUI.Areas.Admin.Controllers
         }
 
         // GET: BrandsController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> DeleteAsync(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return BadRequest();
+            }
+			var model = await _service.FindAsync(id.Value);
+            if (model == null)
+            {
+                return NotFound();
+            }
+			return View(model);
         }
 
         // POST: BrandsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Brand collection)
         {
             try
             {
+				FileHelper.FileRemover(collection.Logo);
+				_service.Delete(collection);
+                _service.Save();
                 return RedirectToAction(nameof(Index));
             }
             catch
