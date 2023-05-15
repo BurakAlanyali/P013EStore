@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using P013EStore.Core.Entities;
@@ -8,8 +9,8 @@ using P013EStore.Service.Abstract;
 
 namespace P013EStore.MVCUI.Areas.Admin.Controllers
 {
-	[Area("Admin")]
-	public class CategoriesController : Controller
+    [Area("Admin"), Authorize]
+    public class CategoriesController : Controller
 	{
 		private readonly IService<Category> _service;
 
