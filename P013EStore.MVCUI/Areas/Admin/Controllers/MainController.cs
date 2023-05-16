@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace P013EStore.MVCUI.Areas.Admin.Controllers
 {
+    [Area("Admin"), Authorize(Policy = "AdminPolicy")]
     public class MainController : Controller
     {
-        [Area("Admin"), Authorize]
+
         public IActionResult Index()
         {
             return View();
