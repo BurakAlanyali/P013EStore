@@ -12,7 +12,7 @@
 				
 				@foreach (var altkategori in Model.Where(x => x.IsActive && x.IsTopMenu && x.ParentId == anakategori.Id))
 				{
-					<li><a class="dropdown-item" href="#">@altkategori.Name</a></li>
+					<li><a class="dropdown-item" href="/Categories/Index/@altkategori.Id">@altkategori.Name</a></li>
 				}
 			</ul>
 		</div>

@@ -22,7 +22,7 @@ namespace P013EStore.MVCUI.Controllers
 			var model = new HomePageViewModel()
 			{
 				Sliders= await _serviceSlider.GetAllAsync(),
-				Products= await _serviceProduct.GetAllAsync()
+				Products= await _serviceProduct.GetAllAsync(p=>p.IsActive && p.IsHome)
 		};
 				
 				//await _serviceSlider.GetAllAsync();
