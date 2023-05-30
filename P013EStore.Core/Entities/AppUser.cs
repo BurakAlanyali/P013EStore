@@ -10,13 +10,13 @@ namespace P013EStore.Core.Entities
 	public class AppUser : IEntity
 	{
         public int Id { get; set; }
-		[Display(Name="Ad")]
+		[Display(Name="Ad"),Required(ErrorMessage ="{0} boş geçilemez.")]
 		public string Name { get; set; }
 		[Display(Name = "Soyad")]
 		public string? Surname { get; set; }
-		[EmailAddress]
+		[EmailAddress, Required(ErrorMessage = "{0} boş geçilemez.")]
 		public string Email { get; set; }
-		[Display(Name = "Şifre")]
+		[Display(Name = "Şifre"), Required(ErrorMessage = "{0} boş geçilemez.")]
 		public string Password { get; set; }
 		[Display(Name = "Kullanıcı Adı")]
 		public string? UserName { get; set; }
