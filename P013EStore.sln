@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P013EStore.Data", "P013ESto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P013EStore.Service", "P013EStore.Service\P013EStore.Service.csproj", "{55907C80-D7EF-48BE-881C-12945258B952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P013EStore.WebAPI", "P013EStore.WebAPI\P013EStore.WebAPI.csproj", "{77BB744C-3BF9-4125-8A54-D7AB5114811C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P013EStore.WebAPI", "P013EStore.WebAPI\P013EStore.WebAPI.csproj", "{77BB744C-3BF9-4125-8A54-D7AB5114811C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P013EStore.WebAPIUsing", "P013EStore.WebAPIUsing\P013EStore.WebAPIUsing.csproj", "{C2BB380B-1F65-4070-9D7F-BCCE8B991669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{77BB744C-3BF9-4125-8A54-D7AB5114811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77BB744C-3BF9-4125-8A54-D7AB5114811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77BB744C-3BF9-4125-8A54-D7AB5114811C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BB380B-1F65-4070-9D7F-BCCE8B991669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BB380B-1F65-4070-9D7F-BCCE8B991669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BB380B-1F65-4070-9D7F-BCCE8B991669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BB380B-1F65-4070-9D7F-BCCE8B991669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

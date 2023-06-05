@@ -39,7 +39,7 @@ namespace P013EStore.WebAPI.Controllers
         }
 
         // PUT api/<AppUsersController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
         public void Put(int id, [FromBody] AppUser value)
         {
             _service.Update(value);
