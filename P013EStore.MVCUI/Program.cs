@@ -13,8 +13,11 @@ builder.Services.AddSession();//uygulamada session kullanabilmek için
 builder.Services.AddDbContext<DatabaseContext>();
 
 builder.Services.AddTransient(typeof(IService<>), typeof(Service<>)); // kendi yazdýðýmýz db iþlemlerini yapan servisi .net core da bu þekilde mvc projesine service olarak tanýtýyoruz ki kullanabilelim.
-builder.Services.AddTransient<IProductService, ProductService>(); // Product için yazdýðýmýz service leri kullanabilmek için projeye tanýtýyoruz.
+builder.Services.AddTransient<IProductService, ProductService>(); // Product için yazdýðýmýz service leri kullanabilmek için projeye tanýtýyoruz. AddTransient yöntemiyle servis eklediðimizde sistem uygulamayý çalýþtýrdýðýnda hazýrda ayný nesne varsa o kullanýlýr yoksa yeni bir nesne oluþturulup kullanýma sunulur.
 
+
+//builder.Services.AddScoped<IProductService, ProductService>();// AddScoped ile servis eklediðimizde sistem uygulamayý çalýþtýrdýðýnda bu nesneye gelen her istek için ayrý ayrý nesneler üretip bunu kullanýma sunar. Ýçeriðin çok dinamik bir þekilde sürekli deðiþtiði projelerde kullanýlabilir döviz altýn fiyatlarý gibi anlýk deðiþimlerin olduðu projeler gibi
+//builder.Services.AddSingleton<IProductService, ProductService>(); // AddSingleton yöntemiyle servis eklediðimizde sistem uygulama çalýþtýrýldýðýnda bu nesneden 1 tane üretir ve her istekte ayný nesne gönderilir. Performans olarak diðerlerinden iyi yöntemdir.
 //Uygulama admin paneli için oturum açma ayarlarý
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
 {

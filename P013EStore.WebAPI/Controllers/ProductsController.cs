@@ -21,14 +21,14 @@ namespace P013EStore.WebAPI.Controllers
         [HttpGet]
         public async Task<IEnumerable<Product>> GetAsync()
         {
-            return await _service.GetAllAsync();
+            return await _service.GetProductsByIncludeAsync();
         }
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
         public async Task<Product> GetAsync(int id)
         {
-            return await _service.FindAsync(id);
+            return await _service.GetProductByIncludeAsync(id);
         }
 
         // POST api/<ProductsController>

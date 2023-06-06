@@ -59,7 +59,7 @@ namespace P013EStore.WebAPI.Controllers
             var kayit = await _service.FindAsync(id);
             if (kayit == null)
             {
-                return NoContent();
+                return NotFound();
             }
             else
             {
