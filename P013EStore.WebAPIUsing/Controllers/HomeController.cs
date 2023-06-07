@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using P013EStore.Core.Entities;
 using P013EStore.WebAPIUsing.Models;
 using System.Diagnostics;
 
@@ -6,16 +7,22 @@ namespace P013EStore.WebAPIUsing.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly HttpClient _httpClient;
+        private readonly string _apiAdres = "https://localhost:7115/api/";
+        public HomeController(HttpClient httpClient)
         {
-            _logger = logger;
+            _httpClient = httpClient;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var products = await _httpClient.GetFromJsonAsync<List<Product>>(_apiAdres + "Products");
+            var model = new HomePageViewModel
+            {
+                Products = products,
+                Sliders = await _httpClient.GetFromJsonAsync<List<Slider>>(_apiAdres + "Sliders")
+        };
+            return View(model);
         }
 
         public IActionResult Privacy()
