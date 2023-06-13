@@ -14,6 +14,9 @@ namespace P013EStore.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<Settings> Settings { get; set; }
+        public DbSet<Log> Logs { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; database=P013EStore; Trusted_Connection=True");
